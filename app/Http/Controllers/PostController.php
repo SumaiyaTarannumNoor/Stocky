@@ -50,4 +50,11 @@ class PostController extends Controller
        $post->save();
        return back()->with('post_updated', 'Post has been updated successfully!');
      }
+
+     public function postSearch(){
+      $search_post = $_GET['query'];
+      $posts = Post::where('title', 'LIKE', '%'.$search_post.'%')->get();
+
+      return view('search', compact('posts'));
+     }
 }
