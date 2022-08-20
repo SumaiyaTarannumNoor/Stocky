@@ -25,7 +25,7 @@
                    <table class = "table table-striped" style="background-color:#00FFFF">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Serial no. <br>(Latest posts are on top.)</th>
                             <th>Post Title</th>
                             <th>Post Description</th>
                             <th>Action</th>
@@ -34,7 +34,7 @@
                     <tbody>
                         @foreach ($posts as $post)
                             <tr>
-                                <td>{{$post->id}}</td>
+                              <td> {{ $loop->iteration }}</td>
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->body}}</td>
                                 <td>
