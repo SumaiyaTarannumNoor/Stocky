@@ -1,4 +1,7 @@
+
 @extends('layouts.master')
+
+
 
 @section('content')
   <body style="background-color:black">
