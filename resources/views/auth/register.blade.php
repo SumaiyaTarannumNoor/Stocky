@@ -1,14 +1,17 @@
-@extends('layouts.app')
+
+@extends('layouts.master')
+
 
 @section('content')
+<body style="background-image: url('{{ asset('img/background.jpg')}}'); ">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card" style = "border: border-box; border-radius: 5px; background-color: rgba(233, 54, 122, 0.4); margin: 10px 0; padding: 12px 6px">
+                <div class="card-header" style = "border: border-box; border-radius: 5px; background-color: rgba(233, 54, 122, 0.4); margin: 10px 0; padding: 12px 6px">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                <div class="card-body" style = "font-size: 28px; color: blueviolet; margin: 10px; margin-right: 30px; font-size: 20px; margin-bottom: 5px; color: violet; font-weight: 600">
+                    <form method="POST" action="{{ route('register') }}" style = "border: border-box; border-radius: 5px; background-color: rgba(233, 54, 122, 0.4); margin: 10px 0; padding: 12px 6px">
                         @csrf
 
                         <div class="row mb-3">
@@ -74,4 +77,5 @@
         </div>
     </div>
 </div>
+<body>
 @endsection

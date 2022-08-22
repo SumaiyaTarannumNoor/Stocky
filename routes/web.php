@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\PostController;
 Use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware'=>"web"], function(){
+Route::group(['middleware'=>"user"], function(){
+    
     Route::get('/add-post', [PostController::class, 'addPost']);
     Route::post('/create-post', [PostController::class, 'createPost'])->name('post.create');
     Route::get('/posts', [PostController::class, 'getPost']);
@@ -28,8 +31,11 @@ Route::group(['middleware'=>"web"], function(){
     Route::get('/edit-post/{id}', [PostController::class, 'editPost']);
     Route::post('/update-post', [PostController::class, 'updatePost'])->name('post.update');
     Route::get('/search', [PostController::class, 'postSearch']);
-    Auth::routes();
+
 });
+
+Auth::routes();
+
 
 
 

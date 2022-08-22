@@ -57,4 +57,9 @@ class PostController extends Controller
 
       return view('search', compact('posts'));
      }
+
+     public function _construct()
+     {
+      $this->middleware('auth');
+     }
 }

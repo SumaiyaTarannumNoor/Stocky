@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 use Closure;
 use Session;
+
 use Illuminate\Http\Request;
 
 class UserAuth
@@ -17,10 +19,10 @@ class UserAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        $path= $request->path();
-        if (($path!="login" || "path"!="register") && (Session::get('User')))
+    
+        if (!Auth::guard('user')->check())
         {
-            return  redirect('/');
+            return  redirect('/login');
         }
         return $next($request);
     }
