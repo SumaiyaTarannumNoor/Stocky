@@ -7,8 +7,8 @@ use Closure;
 use Session;
 
 use Illuminate\Http\Request;
-
-class UserAuth
+use Illuminate\Auth\Middleware\Authenticate as Middleware;
+class UserAuth extends Middleware
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,10 @@ class UserAuth
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    protected function redirectTo($request)
     {
-    
-        if (!Auth::guard('user')->check())
-        {
-            return  redirect('/login');
+        if (! $request->expectsJson()) {
+            return route('login');
         }
-        return $next($request);
     }
 }

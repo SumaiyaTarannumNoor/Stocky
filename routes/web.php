@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\PostController;
 Use App\Http\Controllers\UserController;
+Use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -21,11 +22,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware'=>"user"], function(){
+
+Auth::routes();
+
+Route::middleware(['user'])->group(function(){
     
     Route::get('/add-post', [PostController::class, 'addPost']);
     Route::post('/create-post', [PostController::class, 'createPost'])->name('post.create');
-    Route::get('/posts', [PostController::class, 'getPost']);
+    Route::get('/posts', [PostController::class, 'getPost'])->name('posts');
     Route::get('posts/{id}',[PostController::class, 'getPostById']);
     Route::get('/delete-post/{id}', [PostController::class, 'deletePost']);
     Route::get('/edit-post/{id}', [PostController::class, 'editPost']);
@@ -34,7 +38,6 @@ Route::group(['middleware'=>"user"], function(){
 
 });
 
-Auth::routes();
 
 
 
