@@ -54,6 +54,7 @@ class PostController extends Controller
      public function postSearch(){
       $search_post = $_GET['query'];
       $posts = Post::where('title', 'LIKE', '%'.$search_post.'%')->get();
+      $posts = Post::where('body', 'LIKE', '%'.$search_post.'%')->get();
 
       return view('search', compact('posts'));
      }

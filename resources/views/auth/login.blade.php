@@ -13,7 +13,16 @@
                 <div class="card-body" style = "border: border-box; border-radius: 5px; background-color: rgba(233, 54, 122, 0.4); margin: 10px 0; padding: 12px 6px; font-size: 28px; color: blueviolet; margin: 10px; margin-right: 30px; font-size: 20px; margin-bottom: 5px; color: blueviolet; font-weight: 400">
                     <form method="POST" action="{{ route('login') }}" style = "border: border-box; border-radius: 5px; background-color: rgba(233, 54, 122, 0.4); margin: 10px 0; padding: 12px 6px">
                         @csrf
-
+                        
+                        <div class = "form-group row">
+                            <div class="d-flex justify-content-center">
+                                <a href="" class="btn btn-danger btn-block" style="text-align:center; background-color:green; width: 200px">Login with Google</a>
+                            </div>
+                            <div class="d-flex justify-content-center">    
+                                <a href="" class="btn btn-primary btn-block" style="text-align:center; width: 200px">Login with Facebook</a>
+                            </div>
+                        </div>
+                        <p style="text-align: center">OR</p>
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
