@@ -14,7 +14,7 @@
               <div class = "col-md-12">
                 <div class = "card">
                   <div class= "card-header">
-                    All Post <a href = "/add-post" class="btn btn-success">Add New Post</a>
+                    All Products <a href = "/add-post" class="btn btn-success">Add New Product</a>
                   </div>
                   <div class = "card-body">
                     @if(Session::has('post_deleted'))
@@ -26,8 +26,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Post Title</th>
-                            <th>Post Description</th>
+                            <th>Product Title</th>
+                            <th>Product Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
