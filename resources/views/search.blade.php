@@ -14,7 +14,7 @@
               <div class = "col-md-12">
                 <div class = "card">
                   <div class= "card-header">
-                    All Products <a href = "/add-post" class="btn btn-success">Add New Product</a>
+                    সকল আইটেম <a href = "/add-post" class="btn btn-success">নতুন আইটেম যোগ করুন</a>
                   </div>
                   <div class = "card-body">
                     @if(Session::has('post_deleted'))
@@ -25,10 +25,10 @@
                    <table class = "table table-striped" style="background-color:#00FFFF">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Product Title</th>
-                            <th>Product Description</th>
-                            <th>Action</th>
+                            <th>সিরিয়াল নং</th>
+                            <th>আইটেম এর নাম</th>
+                            <th>আইটেম এর বর্ণনা</th>
+                            <th>প্রক্রিয়া</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,9 +38,9 @@
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->body}}</td>
                                 <td>
-                                    <a href = "/posts/{{$post->id}}" class="btn btn-info">DETAILS</a>
-                                    <a href= "/edit-post/{{$post->id}}" class= "btn btn-success">EDIT</a>
-                                    <a href= "/delete-post/{{$post->id}}" class= "btn btn-danger">DELETE</a>
+                                    <a href = "/posts/{{$post->id}}" class="btn btn-info">বর্ণনা</a>
+                                    <a href= "/edit-post/{{$post->id}}" class= "btn btn-success">হালনাগাদ</a>
+                                    <a href= "/delete-post/{{$post->id}}" class= "btn btn-danger">বাতিল</a>
                                 </td>
                             </tr>
                         @endforeach    
