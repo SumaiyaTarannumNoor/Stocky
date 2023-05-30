@@ -10,7 +10,7 @@
       <h1 style= "color:white; text-decoration-style: double; font-style: oblique; font-size: 80px">Welcome </h1>
       <h2 style= "color:white; text-decoration-style: double; font-style: oblique; font-size: 40px">Join us</h2>
       <p style= "color:aqua; text-decoration-style: double; font-style: italic; font-size: 14px; text-align: left;">
-        This is a Laravel demo project for office-work at TechKnowGram. This project is developed by Sumaiya Tarannum Noor.
+        This is a Laravel demo project for Stock Management. This project is developed by Sumaiya Tarannum Noor.
       </p>
     </div>
   </section>
