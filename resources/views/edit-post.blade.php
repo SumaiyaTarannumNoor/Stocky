@@ -11,7 +11,7 @@
               <div class = "col-md-6 offset-md-3">
                 <div class = "card">
                   <div class= "card-header" style= "background-color:rgba(2,3,10,0.4)">
-                    Edit Post <a href = "/posts" class="btn btn-success">Show my posts</a>
+                    Edit Product <a href = "/posts" class="btn btn-success">Show my Products</a>
                   </div>
                   <div class = "card-body" style= "background-color:red">
                     @if(Session::has('post_updated'))
@@ -23,16 +23,16 @@
                       @csrf 
                       <input type = "hidden" name="id" value="{{$post->id}}"/>
                       <div class = "form-group" style= "background-color:magenta">
-                        <label for = "title">Post Title</label>
-                        <input type = "text" name = "title" class= "form-control" placeholder="Enter Post Title" value="{{$post->title}}"/>
+                        <label for = "title">Product Title</label>
+                        <input type = "text" name = "title" class= "form-control" placeholder="Enter Product Title" value="{{$post->title}}"/>
                       </div>
 
                       <div class="form-group" style= "background-color:red">
-                        <label for = "body">Post Description</label>
-                        <textarea name = "body" class= "form-control" rows= "3" style= "background-color:pink" placeholder="Enter Post Details">{{$post->body}}</textarea>
+                        <label for = "body">Product Description</label>
+                        <textarea name = "body" class= "form-control" rows= "3" style= "background-color:pink" placeholder="Enter Product Details">{{$post->body}}</textarea>
                       </div>
                       
-                      <button type="submit" class="btn btn-success">Update Post</button> 
+                      <button type="submit" class="btn btn-success">Update Product</button> 
                     </form>
                   </div>
                 </div>
